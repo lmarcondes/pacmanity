@@ -14,8 +14,6 @@ pacmanity_update(){
     if (pacman -Qqn; echo; pacman -Qqm) | gist -u "$GIST_ID" -f $HOSTNAME.pacmanity; then
         (pacman -Qn; echo; pacman -Qm) | gist -u "$GIST_ID" -f $HOSTNAME.version.pacmanity
         (pacman -Qqne; echo; pacman -Qqme) | gist -u "$GIST_ID" -f $HOSTNAME.explicit.pacmanity
-        (pacman -Qqnd; echo; pacman -Qqmd) | gist -u "$GIST_ID" -f $HOSTNAME.version.pacmanity
-        (pacman -Qqm) | gist -u "$GIST_ID" -f $HOSTNAME.aur.pacmanity
         echo "Pacmanity: Gist successfully updated."
     else
         echo "Pacmanity: ERROR! Try running"
